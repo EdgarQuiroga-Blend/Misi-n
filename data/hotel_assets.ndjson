@@ -1,0 +1,62 @@
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Baño y peluquería premium","tipo_servicio":"baño","aplica_a":["perro","gato"],"precio":85000,"duracion_horas":2.0,"disponible":true,"descripcion":"Servicio completo de baño, secado y corte de pelo","tags":["premium","spa","grooming"],"fecha_creacion":"2023-06-01","capacidad_max":5}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Hospedaje suite canina","tipo_servicio":"hospedaje","aplica_a":["perro"],"precio":120000,"duracion_horas":24.0,"disponible":true,"descripcion":"Suite individual con cama ortopédica y televisión","tags":["premium","luxury","hospedaje"],"fecha_creacion":"2023-01-15","capacidad_max":1}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Consulta veterinaria general","tipo_servicio":"veterinaria","aplica_a":["perro","gato"],"precio":60000,"duracion_horas":1.0,"disponible":true,"descripcion":"Revisión general de salud con veterinario certificado","tags":["salud","veterinaria","basico"],"fecha_creacion":"2023-01-01","capacidad_max":10}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Guardería diurna perros","tipo_servicio":"guarderia","aplica_a":["perro"],"precio":45000,"duracion_horas":8.0,"disponible":true,"descripcion":"Cuidado diurno con actividades y socialización","tags":["guarderia","social","basico"],"fecha_creacion":"2023-03-10","capacidad_max":15}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Spa relajante felino","tipo_servicio":"spa","aplica_a":["gato"],"precio":95000,"duracion_horas":1.5,"disponible":true,"descripcion":"Masajes y aromaterapia especial para gatos","tags":["premium","spa","relajacion"],"fecha_creacion":"2023-07-20","capacidad_max":3}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Entrenamiento básico canino","tipo_servicio":"entrenamiento","aplica_a":["perro"],"precio":75000,"duracion_horas":1.0,"disponible":true,"descripcion":"Clases de obediencia básica con entrenador certificado","tags":["entrenamiento","educacion","basico"],"fecha_creacion":"2023-04-05","capacidad_max":8}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Hospedaje habitación estándar","tipo_servicio":"hospedaje","aplica_a":["perro","gato"],"precio":65000,"duracion_horas":24.0,"disponible":true,"descripcion":"Habitación compartida con cama y juguetes","tags":["hospedaje","basico"],"fecha_creacion":"2023-01-15","capacidad_max":4}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Vacunación completa","tipo_servicio":"veterinaria","aplica_a":["perro","gato"],"precio":80000,"duracion_horas":0.5,"disponible":true,"descripcion":"Aplicación de vacunas según esquema del veterinario","tags":["salud","veterinaria","vacunas"],"fecha_creacion":"2023-02-01","capacidad_max":20}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Paseo grupal","tipo_servicio":"paseo","aplica_a":["perro"],"precio":25000,"duracion_horas":1.0,"disponible":true,"descripcion":"Paseo en grupo con paseador certificado","tags":["ejercicio","social","basico"],"fecha_creacion":"2023-05-01","capacidad_max":6}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Baño básico con secado","tipo_servicio":"baño","aplica_a":["perro","gato"],"precio":40000,"duracion_horas":1.0,"disponible":true,"descripcion":"Baño sencillo con shampoo hipoalergénico y secado","tags":["basico","grooming"],"fecha_creacion":"2023-06-01","capacidad_max":8}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Corte de uñas","tipo_servicio":"estetica","aplica_a":["perro","gato"],"precio":15000,"duracion_horas":0.25,"disponible":true,"descripcion":"Corte y limado de uñas con herramientas profesionales","tags":["estetica","basico","grooming"],"fecha_creacion":"2023-06-01","capacidad_max":15}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Hospedaje suite felina","tipo_servicio":"hospedaje","aplica_a":["gato"],"precio":100000,"duracion_horas":24.0,"disponible":true,"descripcion":"Suite exclusiva para gatos con árbol rascador y zona de juego","tags":["premium","luxury","hospedaje"],"fecha_creacion":"2023-08-01","capacidad_max":2}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Desparasitación interna","tipo_servicio":"veterinaria","aplica_a":["perro","gato"],"precio":35000,"duracion_horas":0.25,"disponible":true,"descripcion":"Tratamiento antiparasitario interno oral","tags":["salud","veterinaria","basico"],"fecha_creacion":"2023-02-15","capacidad_max":20}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Fotografía de mascotas","tipo_servicio":"estetica","aplica_a":["perro","gato"],"precio":55000,"duracion_horas":1.0,"disponible":true,"descripcion":"Sesión fotográfica profesional para tu mascota","tags":["premium","estetica","fotografia"],"fecha_creacion":"2023-09-10","capacidad_max":5}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Natación terapéutica","tipo_servicio":"terapia","aplica_a":["perro"],"precio":90000,"duracion_horas":1.0,"disponible":true,"descripcion":"Sesión de hidroterapia en piscina temperada","tags":["premium","terapia","salud"],"fecha_creacion":"2023-10-01","capacidad_max":4}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Limpieza dental","tipo_servicio":"veterinaria","aplica_a":["perro","gato"],"precio":110000,"duracion_horas":1.5,"disponible":true,"descripcion":"Limpieza dental profesional con ultrasonido","tags":["salud","veterinaria","dental"],"fecha_creacion":"2023-03-01","capacidad_max":6}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Entrenamiento avanzado","tipo_servicio":"entrenamiento","aplica_a":["perro"],"precio":120000,"duracion_horas":1.5,"disponible":false,"descripcion":"Adiestramiento avanzado de comportamiento","tags":["premium","entrenamiento","educacion"],"fecha_creacion":"2023-05-15","capacidad_max":4}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Guardería nocturna","tipo_servicio":"guarderia","aplica_a":["perro","gato"],"precio":55000,"duracion_horas":10.0,"disponible":true,"descripcion":"Cuidado nocturno con monitoreo constante","tags":["guarderia","hospedaje","basico"],"fecha_creacion":"2023-04-20","capacidad_max":10}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Masaje terapéutico canino","tipo_servicio":"terapia","aplica_a":["perro"],"precio":70000,"duracion_horas":1.0,"disponible":true,"descripcion":"Masaje relajante para perros con tensión muscular","tags":["premium","terapia","spa"],"fecha_creacion":"2023-11-01","capacidad_max":3}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Servicio de transporte","tipo_servicio":"transporte","aplica_a":["perro","gato"],"precio":30000,"duracion_horas":1.0,"disponible":true,"descripcion":"Recogida y entrega de mascota a domicilio","tags":["transporte","basico"],"fecha_creacion":"2023-06-15","capacidad_max":5}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Control de pulgas y garrapatas","tipo_servicio":"veterinaria","aplica_a":["perro","gato"],"precio":40000,"duracion_horas":0.5,"disponible":true,"descripcion":"Aplicación de antiparasitario externo","tags":["salud","veterinaria","basico"],"fecha_creacion":"2023-02-01","capacidad_max":20}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Clases de socialización","tipo_servicio":"entrenamiento","aplica_a":["perro"],"precio":50000,"duracion_horas":1.0,"disponible":true,"descripcion":"Sesiones de socialización con otros perros","tags":["social","entrenamiento","basico"],"fecha_creacion":"2023-07-01","capacidad_max":10}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Terapia de relajación felina","tipo_servicio":"terapia","aplica_a":["gato"],"precio":65000,"duracion_horas":0.75,"disponible":true,"descripcion":"Sesión de relajación con música y aromas para gatos","tags":["premium","spa","relajacion"],"fecha_creacion":"2023-08-15","capacidad_max":4}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Paseo privado VIP","tipo_servicio":"paseo","aplica_a":["perro"],"precio":60000,"duracion_horas":1.5,"disponible":true,"descripcion":"Paseo individual a cargo de un paseador dedicado","tags":["premium","luxury","ejercicio"],"fecha_creacion":"2023-05-10","capacidad_max":1}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Chequeo geriátrico","tipo_servicio":"veterinaria","aplica_a":["perro","gato"],"precio":95000,"duracion_horas":1.5,"disponible":true,"descripcion":"Revisión especializada para mascotas mayores de 7 años","tags":["salud","veterinaria","geriatrico"],"fecha_creacion":"2023-09-01","capacidad_max":8}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Microchip e identificación","tipo_servicio":"veterinaria","aplica_a":["perro","gato"],"precio":45000,"duracion_horas":0.25,"disponible":true,"descripcion":"Implante de microchip para identificación permanente","tags":["salud","veterinaria","identificacion"],"fecha_creacion":"2023-01-10","capacidad_max":20}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Piscina privada","tipo_servicio":"recreacion","aplica_a":["perro"],"precio":50000,"duracion_horas":1.0,"disponible":true,"descripcion":"Uso exclusivo de piscina para tu perro","tags":["premium","recreacion","ejercicio"],"fecha_creacion":"2023-10-15","capacidad_max":2}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Cuidado post-operatorio","tipo_servicio":"veterinaria","aplica_a":["perro","gato"],"precio":85000,"duracion_horas":8.0,"disponible":false,"descripcion":"Cuidado especializado después de cirugía","tags":["salud","veterinaria","especial"],"fecha_creacion":"2023-04-01","capacidad_max":4}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Taller de adiestramiento familiar","tipo_servicio":"entrenamiento","aplica_a":["perro"],"precio":80000,"duracion_horas":2.0,"disponible":true,"descripcion":"Sesión de entrenamiento donde participa toda la familia","tags":["entrenamiento","social","educacion"],"fecha_creacion":"2023-06-20","capacidad_max":6}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Limpieza de oídos","tipo_servicio":"estetica","aplica_a":["perro","gato"],"precio":20000,"duracion_horas":0.25,"disponible":true,"descripcion":"Limpieza profunda y segura del canal auditivo","tags":["estetica","basico","grooming"],"fecha_creacion":"2023-06-01","capacidad_max":15}
+{"index":{"_index":"hotel_assets"}}
+{"nombre":"Pack bienvenida mascota nueva","tipo_servicio":"especial","aplica_a":["perro","gato"],"precio":150000,"duracion_horas":3.0,"disponible":true,"descripcion":"Paquete completo para mascotas nuevas: baño, chequeo, microchip y foto","tags":["premium","especial","pack"],"fecha_creacion":"2023-12-01","capacidad_max":5}
