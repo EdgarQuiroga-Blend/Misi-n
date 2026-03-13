@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HPG Hotel de Mascotas — Servicios</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  </head>
+<body>
+ 
+<!-- CONN BAR -->
+<div class="conn-bar" id="conn-bar">
+  <span class="dot"></span>
+  <span id="conn-text">Conectando a OpenSearch · http://localhost:9200 · hotel_assets</span>
+</div>
+ 
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-name">Hotel de Mascotas HPG</div>
+      <div class="logo-sub">Servicios disponibles para tu mascota</div>
+    </div>
+  </div>
+  <div class="status">
+    <span class="dot"></span>
+    <span id="status-text">Cargando...</span>
+  </div>
+</div>
+ 
+<!-- FILTERS -->
+<div class="filters">
+  <div class="filter-group">
+    <div class="filter-label">Tipo de mascota</div>
+    <div class="chips" id="chips-mascota">
+      <div class="chip active" onclick="setFilter('mascota','todos',this)">Todos</div>
+      <div class="chip" onclick="setFilter('mascota','perro',this)">🐶 Perros</div>
+      <div class="chip" onclick="setFilter('mascota','gato',this)">🐱 Gatos</div>
+    </div>
+  </div>
+ 
+  <div class="filter-group">
+    <div class="filter-label">Tipo de servicio</div>
+    <div class="chips" id="chips-tipo">
+      <div class="chip active" onclick="setFilter('tipo','todos',this)">Todos</div>
+      <div class="chip" onclick="setFilter('tipo','hospedaje',this)">🏠 Hospedaje</div>
+      <div class="chip" onclick="setFilter('tipo','baño',this)">🛁 Baño</div>
+      <div class="chip" onclick="setFilter('tipo','veterinaria',this)">🩺 Veterinaria</div>
+      <div class="chip" onclick="setFilter('tipo','spa',this)">✨ Spa</div>
+    </div>
+  </div>
+ 
+  <div class="filter-group price-group">
+    <div class="filter-label">Precio máximo</div>
+    <div class="price-row">
+      <input type="range" min="0" max="500000" step="5000" value="500000"
+             id="precio-slider" oninput="setPrecio(this.value)"/>
+      <span class="price-val" id="precio-val">Sin límite</span>
+    </div>
+  </div>
+</div>
+ 
+<!-- MAIN -->
+<div class="main">
+  <div class="results-bar">
+    <span class="results-count" id="results-count">Buscando servicios...</span>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">
+    <div class="empty-icon">🔍</div>
+    <div class="empty-title">Sin resultados</div>
+    <div>Intenta ajustar los filtros de búsqueda</div>
+  </div>
+</div>
+ 
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal-content"></div>
+</div>
+  <script src="scripts/scripts.js"></script>
+
+</body>
+</html>
