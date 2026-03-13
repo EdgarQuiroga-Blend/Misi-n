@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "nombre":         { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+      "tipo_servicio":  { "type": "keyword" },
+      "aplica_a":       { "type": "keyword" },
+      "precio":         { "type": "float" },
+      "duracion_horas": { "type": "float" },
+      "disponible":     { "type": "boolean" },
+      "descripcion":    { "type": "text" },
+      "tags":           { "type": "keyword" },
+      "fecha_creacion": { "type": "date", "format": "yyyy-MM-dd" },
+      "capacidad_max":  { "type": "integer" }
+    }
+  }
+}

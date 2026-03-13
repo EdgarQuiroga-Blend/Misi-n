@@ -1,0 +1,62 @@
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Luna","tipo":"gato","raza":"Siamés","edad":3,"peso":4.2,"color":"crema","sexo":"hembra","temperamento":["tranquila","cariñosa"],"adoptado":false,"fecha_ingreso":"2024-03-15","descripcion":"Gata muy tranquila, ideal para apartamento","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Max","tipo":"perro","raza":"Labrador","edad":5,"peso":28.0,"color":"amarillo","sexo":"macho","temperamento":["amigable","activo","juguetón"],"adoptado":false,"fecha_ingreso":"2024-01-10","descripcion":"Perro muy sociable, le encanta jugar con niños","vacunas":["rabia","parvovirus","moquillo"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Michi","tipo":"gato","raza":"Persa","edad":2,"peso":3.8,"color":"blanco","sexo":"macho","temperamento":["juguetón","independiente"],"adoptado":false,"fecha_ingreso":"2024-05-20","descripcion":"Gato persa muy elegante y curioso","vacunas":["rabia","triple_felina","leucemia_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Rocky","tipo":"perro","raza":"Bulldog","edad":4,"peso":22.0,"color":"marrón","sexo":"macho","temperamento":["tranquilo","amigable"],"adoptado":true,"fecha_ingreso":"2023-11-05","descripcion":"Bulldog muy tranquilo, ideal para familias","vacunas":["rabia","parvovirus"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Nala","tipo":"gato","raza":"Maine Coon","edad":1,"peso":5.1,"color":"gris","sexo":"hembra","temperamento":["activa","curiosa","amigable"],"adoptado":false,"fecha_ingreso":"2024-07-01","descripcion":"Gata joven y muy energética","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Thor","tipo":"perro","raza":"Pastor Alemán","edad":6,"peso":35.0,"color":"negro y café","sexo":"macho","temperamento":["leal","activo","inteligente"],"adoptado":false,"fecha_ingreso":"2024-02-14","descripcion":"Perro muy leal y entrenado","vacunas":["rabia","parvovirus","moquillo","bordetella"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Cleo","tipo":"gato","raza":"Bengalí","edad":4,"peso":4.5,"color":"atigrado","sexo":"hembra","temperamento":["activa","juguetona","curiosa"],"adoptado":false,"fecha_ingreso":"2024-04-10","descripcion":"Gata bengalí con pelaje exótico","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Toby","tipo":"perro","raza":"Golden Retriever","edad":3,"peso":30.0,"color":"dorado","sexo":"macho","temperamento":["amigable","juguetón","cariñoso"],"adoptado":false,"fecha_ingreso":"2024-06-18","descripcion":"Golden muy cariñoso con todos","vacunas":["rabia","parvovirus","moquillo"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Mia","tipo":"gato","raza":"Ragdoll","edad":2,"peso":4.0,"color":"blanco y gris","sexo":"hembra","temperamento":["tranquila","cariñosa"],"adoptado":true,"fecha_ingreso":"2023-09-22","descripcion":"Gata muy dócil y tranquila","vacunas":["rabia","triple_felina","leucemia_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Zeus","tipo":"perro","raza":"Rottweiler","edad":7,"peso":45.0,"color":"negro y café","sexo":"macho","temperamento":["leal","protector","tranquilo"],"adoptado":false,"fecha_ingreso":"2023-12-01","descripcion":"Rottweiler bien socializado y obediente","vacunas":["rabia","parvovirus","moquillo"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Kira","tipo":"gato","raza":"Abisinio","edad":3,"peso":3.5,"color":"canela","sexo":"hembra","temperamento":["activa","curiosa","independiente"],"adoptado":false,"fecha_ingreso":"2024-08-05","descripcion":"Gata abisinia muy ágil y curiosa","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Bruno","tipo":"perro","raza":"Beagle","edad":2,"peso":12.0,"color":"tricolor","sexo":"macho","temperamento":["amigable","curioso","activo"],"adoptado":false,"fecha_ingreso":"2024-03-30","descripcion":"Beagle muy enérgico y juguetón","vacunas":["rabia","parvovirus","moquillo","bordetella"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Sasha","tipo":"gato","raza":"Angora","edad":5,"peso":3.9,"color":"blanco","sexo":"hembra","temperamento":["elegante","tranquila","cariñosa"],"adoptado":false,"fecha_ingreso":"2024-01-25","descripcion":"Gata angora muy fina y delicada","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Loki","tipo":"perro","raza":"Husky Siberiano","edad":4,"peso":26.0,"color":"blanco y gris","sexo":"macho","temperamento":["activo","juguetón","independiente"],"adoptado":false,"fecha_ingreso":"2024-05-05","descripcion":"Husky muy enérgico, necesita mucho ejercicio","vacunas":["rabia","parvovirus","moquillo"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Perla","tipo":"gato","raza":"Británico de Pelo Corto","edad":1,"peso":3.2,"color":"azul grisáceo","sexo":"hembra","temperamento":["tranquila","juguetona"],"adoptado":false,"fecha_ingreso":"2024-09-10","descripcion":"Gatita joven muy adaptable","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Simba","tipo":"perro","raza":"Pomerania","edad":2,"peso":3.5,"color":"naranja","sexo":"macho","temperamento":["amigable","curioso","activo"],"adoptado":true,"fecha_ingreso":"2023-08-15","descripcion":"Pomerania muy pequeño y enérgico","vacunas":["rabia","parvovirus"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Nina","tipo":"gato","raza":"Esfinge","edad":3,"peso":3.7,"color":"rosado","sexo":"hembra","temperamento":["cariñosa","activa","social"],"adoptado":false,"fecha_ingreso":"2024-06-01","descripcion":"Gata esfinge sin pelo, muy sociable","vacunas":["rabia","triple_felina","leucemia_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Rex","tipo":"perro","raza":"Dálmata","edad":5,"peso":27.0,"color":"blanco con manchas","sexo":"macho","temperamento":["activo","juguetón","leal"],"adoptado":false,"fecha_ingreso":"2024-02-28","descripcion":"Dálmata muy activo, ideal para familias deportistas","vacunas":["rabia","parvovirus","moquillo"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Canela","tipo":"gato","raza":"Mestizo","edad":4,"peso":4.1,"color":"naranja","sexo":"hembra","temperamento":["tranquila","cariñosa","independiente"],"adoptado":false,"fecha_ingreso":"2024-04-22","descripcion":"Gata mestiza muy cariñosa","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Duke","tipo":"perro","raza":"Boxer","edad":3,"peso":29.0,"color":"marrón","sexo":"macho","temperamento":["juguetón","leal","protector"],"adoptado":false,"fecha_ingreso":"2024-07-15","descripcion":"Boxer muy juguetón y protector con su familia","vacunas":["rabia","parvovirus","moquillo"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Oreo","tipo":"gato","raza":"Mestizo","edad":2,"peso":3.3,"color":"negro y blanco","sexo":"macho","temperamento":["juguetón","curioso","social"],"adoptado":false,"fecha_ingreso":"2024-08-20","descripcion":"Gato bicolor muy sociable","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Bella","tipo":"perro","raza":"Schnauzer","edad":6,"peso":8.5,"color":"gris","sexo":"hembra","temperamento":["inteligente","activa","leal"],"adoptado":false,"fecha_ingreso":"2024-01-05","descripcion":"Schnauzer muy inteligente y fácil de entrenar","vacunas":["rabia","parvovirus","moquillo","bordetella"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Tigre","tipo":"gato","raza":"Mestizo","edad":5,"peso":4.8,"color":"atigrado","sexo":"macho","temperamento":["independiente","tranquilo"],"adoptado":true,"fecha_ingreso":"2023-07-10","descripcion":"Gato atigrado muy independiente","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Coco","tipo":"perro","raza":"Chihuahua","edad":4,"peso":2.5,"color":"café","sexo":"macho","temperamento":["activo","leal","curioso"],"adoptado":false,"fecha_ingreso":"2024-03-08","descripcion":"Chihuahua pequeño pero con mucha personalidad","vacunas":["rabia","parvovirus"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Estrella","tipo":"gato","raza":"Ragdoll","edad":1,"peso":3.0,"color":"blanco y beige","sexo":"hembra","temperamento":["tranquila","cariñosa","dócil"],"adoptado":false,"fecha_ingreso":"2024-09-01","descripcion":"Gatita ragdoll muy dócil y cariñosa","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Apolo","tipo":"perro","raza":"Gran Danés","edad":2,"peso":55.0,"color":"gris","sexo":"macho","temperamento":["tranquilo","amigable","leal"],"adoptado":false,"fecha_ingreso":"2024-06-25","descripcion":"Gran Danés muy gentil a pesar de su tamaño","vacunas":["rabia","parvovirus","moquillo"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Violeta","tipo":"gato","raza":"Persa","edad":6,"peso":4.3,"color":"gris","sexo":"hembra","temperamento":["tranquila","elegante","independiente"],"adoptado":false,"fecha_ingreso":"2024-02-10","descripcion":"Gata persa muy elegante y serena","vacunas":["rabia","triple_felina","leucemia_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Buddy","tipo":"perro","raza":"Cocker Spaniel","edad":3,"peso":11.0,"color":"dorado","sexo":"macho","temperamento":["amigable","cariñoso","activo"],"adoptado":false,"fecha_ingreso":"2024-05-12","descripcion":"Cocker muy cariñoso y de fácil manejo","vacunas":["rabia","parvovirus","moquillo"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Pelusa","tipo":"gato","raza":"Angora","edad":2,"peso":3.6,"color":"blanco","sexo":"hembra","temperamento":["juguetona","curiosa","social"],"adoptado":false,"fecha_ingreso":"2024-07-30","descripcion":"Gata angora blanca muy curiosa","vacunas":["rabia","triple_felina"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Ranger","tipo":"perro","raza":"Border Collie","edad":4,"peso":20.0,"color":"negro y blanco","sexo":"macho","temperamento":["inteligente","activo","leal"],"adoptado":false,"fecha_ingreso":"2024-04-05","descripcion":"Border Collie muy inteligente, aprende rápido","vacunas":["rabia","parvovirus","moquillo","bordetella"]}
+{"index":{"_index":"pets_catalog"}}
+{"nombre":"Azul","tipo":"gato","raza":"Azul Ruso","edad":3,"peso":4.0,"color":"gris azulado","sexo":"macho","temperamento":["tranquilo","leal","inteligente"],"adoptado":false,"fecha_ingreso":"2024-08-15","descripcion":"Gato azul ruso muy elegante y reservado","vacunas":["rabia","triple_felina"]}

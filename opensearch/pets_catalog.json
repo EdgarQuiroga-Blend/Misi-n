@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "nombre":        { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+      "tipo":          { "type": "keyword" },
+      "raza":          { "type": "keyword" },
+      "edad":          { "type": "integer" },
+      "peso":          { "type": "float" },
+      "color":         { "type": "keyword" },
+      "sexo":          { "type": "keyword" },
+      "temperamento":  { "type": "keyword" },
+      "adoptado":      { "type": "boolean" },
+      "fecha_ingreso": { "type": "date", "format": "yyyy-MM-dd" },
+      "descripcion":   { "type": "text" },
+      "vacunas":       { "type": "keyword" }
+    }
+  }
+}
