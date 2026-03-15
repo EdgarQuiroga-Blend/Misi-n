@@ -1,24 +1,17 @@
 #!/bin/bash
-
 set -e
 
 echo "Waiting for OpenSearch to be fully ready..."
-until curl -s http://localhost:9200/_cluster/health | grep -q '"status":"green"'; do
-  echo "Waiting for green status..."
+until curl -s http://localhost:9200/_cluster/health | grep -qE '"status":"(green|yellow)"'; do
+  echo "Waiting for green/yellow status..."
   sleep 5
 done
 
-echo "✅ OpenSearch is green! Creating indices..."
+echo "✅ OpenSearch ready! Creating indices..."
 
-# Crear índice para logs (si no existe)
 curl -X PUT "localhost:9200/hpg-logs" -H 'Content-Type: application/json' -d'
 {
-  "settings": {
-    "index": {
-      "number_of_shards": 1,
-      "number_of_replicas": 0
-    }
-  },
+  "settings": {"index": {"number_of_shards": 1, "number_of_replicas": 0}},
   "mappings": {
     "properties": {
       "timestamp": { "type": "date" },
@@ -30,15 +23,9 @@ curl -X PUT "localhost:9200/hpg-logs" -H 'Content-Type: application/json' -d'
   }
 }'
 
-# Crear índice para métricas (si no existe)
 curl -X PUT "localhost:9200/hpg-metrics" -H 'Content-Type: application/json' -d'
 {
-  "settings": {
-    "index": {
-      "number_of_shards": 1,
-      "number_of_replicas": 0
-    }
-  },
+  "settings": {"index": {"number_of_shards": 1, "number_of_replicas": 0}},
   "mappings": {
     "properties": {
       "timestamp": { "type": "date" },
