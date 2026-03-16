@@ -1,43 +1,34 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
-echo "Waiting for OpenSearch to be fully ready..."
-until curl -s http://localhost:9200/_cluster/health | grep -qE '"status":"(green|yellow)"'; do
-  echo "Waiting for green/yellow status..."
-  sleep 5
-done
+OPENSEARCH_URL="${OPENSEARCH_URL:-http://localhost:9200}"
 
-echo "✅ OpenSearch ready! Creating indices..."
+echo ">>> Creando índice pets_catalog..."
+STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+  -X PUT "$OPENSEARCH_URL/pets_catalog" \
+  -H "Content-Type: application/json" \
+  -d @opensearch/pets_catalog.json)
 
-curl -X PUT "localhost:9200/hpg-logs" -H 'Content-Type: application/json' -d'
-{
-  "settings": {"index": {"number_of_shards": 1, "number_of_replicas": 0}},
-  "mappings": {
-    "properties": {
-      "timestamp": { "type": "date" },
-      "level": { "type": "keyword" },
-      "message": { "type": "text" },
-      "service": { "type": "keyword" },
-      "host": { "type": "keyword" }
-    }
-  }
-}'
+if [ "$STATUS" = "200" ]; then
+  echo "✅ pets_catalog creado correctamente"
+else
+  echo "❌ Error creando pets_catalog (HTTP $STATUS)"
+  exit 1
+fi
 
-curl -X PUT "localhost:9200/hpg-metrics" -H 'Content-Type: application/json' -d'
-{
-  "settings": {"index": {"number_of_shards": 1, "number_of_replicas": 0}},
-  "mappings": {
-    "properties": {
-      "timestamp": { "type": "date" },
-      "service": { "type": "keyword" },
-      "metric_name": { "type": "keyword" },
-      "value": { "type": "float" },
-      "unit": { "type": "keyword" },
-      "labels": { "type": "object" }
-    }
-  }
-}'
+echo ">>> Creando índice hotel_assets..."
+STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+  -X PUT "$OPENSEARCH_URL/hotel_assets" \
+  -H "Content-Type: application/json" \
+  -d @opensearch/hotel_assets.json)
 
-echo "✅ Índices creados exitosamente!"
-echo "Listando índices:"
-curl -s "localhost:9200/_cat/indices?v"
+if [ "$STATUS" = "200" ]; then
+  echo "✅ hotel_assets creado correctamente"
+else
+  echo "❌ Error creando hotel_assets (HTTP $STATUS)"
+  exit 1
+fi
+
+echo ""
+echo ">>> Índices disponibles:"
+curl -s "$OPENSEARCH_URL/_cat/indices?v"
