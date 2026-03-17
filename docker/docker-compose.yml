@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   opensearch-node:
     image: opensearchproject/opensearch:2.13.0
@@ -12,6 +10,10 @@ services:
       - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
       - DISABLE_INSTALL_DEMO_CONFIG=true
       - DISABLE_SECURITY_PLUGIN=true
+      - http.cors.enabled=true
+      - http.cors.allow-origin=*
+      - http.cors.allow-headers=X-Requested-With,Content-Type,Content-Length,Authorization
+      - http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE
     ulimits:
       memlock:
         soft: -1
@@ -37,8 +39,13 @@ services:
     image: opensearchproject/opensearch-dashboards:2.13.0
     container_name: hpg-dashboards
     environment:
-      - OPENSEARCH_HOSTS=["http://opensearch-node:9200"]
+      - OPENSEARCH_HOSTS=["http://hpg-opensearch:9200"]
       - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
+      - LC_ALL=en_US.UTF-8
+      - LANG=en_US.UTF-8
+      - LANGUAGE=en_US.UTF-8
+      - TZ=UTC
+      - NODE_OPTIONS="--max-old-space-size=2048"
     ports:
       - "5601:5601"
     networks:
@@ -46,6 +53,7 @@ services:
     depends_on:
       opensearch-node:
         condition: service_healthy
+    restart: always
 
 volumes:
   hpg-opensearch-data:
