@@ -93,10 +93,13 @@ cd hpg-opensearch
 # 4. Cargar datos
 ./scripts/load_data.sh
 
-# 5. Verificar
+# 5. Verificar queries y cargar Dashboard 
 ./scripts/verify_queries.sh
 
-# 6. Limpiar todo al finalizar
+# 6. Solo detener (conserva datos)
+./scripts/down.sh
+
+# 7. Limpiar todo al finalizar
 ./scripts/clean.sh
 ```
 
