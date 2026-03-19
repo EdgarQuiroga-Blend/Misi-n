@@ -254,23 +254,7 @@ run_query 11 "Servicios disponibles con tag premium" "hotel_assets" '{
   }
 }'
 
-# --- NUEVO: Importar dashboards y visualizaciones ---
-echo ""
-echo ">>> Importando dashboards y visualizaciones desde data/dashboard.ndjson..."
-sleep 5
-RESPONSE=$(curl -s -X POST "$DASHBOARDS_URL/api/saved_objects/_import" \
-  -H "osd-xsrf: true" \
-  --form file=@data/dashboard.ndjson)
 
-if echo "$RESPONSE" | grep -q '"success":false'; then
-  echo "❌ Errores al importar dashboards"
-  echo "$RESPONSE" | python3 -m json.tool
-  exit 1
-else
-  echo "✅ Dashboards y visualizaciones importados exitosamente"
-fi
-
-sleep 5
 # ---------------------------------------------------------------------------
 # Resumen final
 # ---------------------------------------------------------------------------

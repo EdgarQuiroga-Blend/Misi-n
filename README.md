@@ -84,22 +84,17 @@ sudo sysctl -p
 git clone https://github.com/<org>/hpg-opensearch.git
 cd hpg-opensearch
 
-# 2. Levantar el stack
+# 2. Levantar el stack,indices,datos etc...
 ./scripts/up.sh
 
-# 3. Inicializar índices
-./scripts/init_indices.sh
 
-# 4. Cargar datos
-./scripts/load_data.sh
-
-# 5. Verificar queries y cargar Dashboard 
+# 3. Verificar queries y cargar Dashboard 
 ./scripts/verify_queries.sh
 
-# 6. Solo detener (conserva datos)
+# 4. Solo detener (conserva datos)
 ./scripts/down.sh
 
-# 7. Limpiar todo al finalizar
+# 5. Limpiar todo al finalizar
 ./scripts/clean.sh
 ```
 
@@ -108,26 +103,33 @@ cd hpg-opensearch
 ## Estructura del repositorio
 
 ```
-hpg-opensearch/
+MISI-N/
+├── css/
+│   └── style.css
+├── data/
+│   ├── dashboard.ndjson            
+│   ├── hotel_assets.ndjson           
+│   └── pets_catalog.ndjson         
 ├── docker/
 │   └── docker-compose.yml        # Stack OpenSearch + Dashboards
+├── docs/
+│   └── sources.md                # Origen y proceso de datos (Fabio)
+├── opensearch/
+│   ├── pets_catalog.json         # Mapping catálogo mascotas (Jhon)
+│   └── hotel_assets.json         # Mapping servicios hotel (Jhon)
 ├── scripts/
 │   ├── up.sh                     # Levantar stack
+│   ├── create_hotel_data.sh 
+│   ├── fix_hotel_data.sh
+│   ├── scripts.js
 │   ├── down.sh                   # Detener contenedores
 │   ├── clean.sh                  # Eliminar todo (volúmenes + red)
 │   ├── init_indices.sh           # Crear índices (Jhon)
 │   ├── load_data.sh              # Cargar datasets (Jhon)
-│   └── verify_queries.sh         # Ejecutar queries (Fabio)
-├── opensearch/
-│   ├── pets_catalog.json         # Mapping catálogo mascotas (Jhon)
-│   └── hotel_assets.json         # Mapping servicios hotel (Jhon)
-├── data/
-│   ├── pets_catalog.ndjson       # Dataset perros y gatos (Jhon)
-│   └── hotel_assets.ndjson       # Dataset servicios (Jhon)
-├── docs/
-│   └── sources.md                # Origen y proceso de datos (Fabio)
-├── .env.example                  # Variables de entorno (sin secretos)
+│   ├── setup_dashboards.sh
+│   └── verify_queries.sh         # Ejecutar queries (Fabio)                
 ├── .gitignore
+├── index.html
 └── README.md
 ```
 
