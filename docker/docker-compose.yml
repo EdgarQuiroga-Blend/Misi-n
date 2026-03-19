@@ -10,7 +10,7 @@ services:
       - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
       - DISABLE_INSTALL_DEMO_CONFIG=true
       - DISABLE_SECURITY_PLUGIN=true
-      - network.host=0.0.0.0     
+      - network.host=0.0.0.0
       - http.cors.enabled=true
       - http.cors.allow-origin=*
       - http.cors.allow-headers=X-Requested-With,Content-Type,Content-Length,Authorization
@@ -57,6 +57,13 @@ services:
     restart: always
     links:
       - opensearch-node:hpg-opensearch
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:5601/api/status | grep -q '\"state\":\"green\"'"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 60s
+
 volumes:
   hpg-opensearch-data:
     name: hpg-opensearch-data
