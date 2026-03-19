@@ -12,6 +12,7 @@ set -euo pipefail
 OPENSEARCH_HOST="${OPENSEARCH_HOST:-http://localhost:9200}"
 OPENSEARCH_USER="${OPENSEARCH_USER:-admin}"
 OPENSEARCH_PASS="${OPENSEARCH_PASS:-admin}"
+DASHBOARDS_URL="${DASHBOARDS_URL:-http://localhost:5601}"
 
 PASS=0
 FAIL=0
@@ -253,6 +254,23 @@ run_query 11 "Servicios disponibles con tag premium" "hotel_assets" '{
   }
 }'
 
+# --- NUEVO: Importar dashboards y visualizaciones ---
+echo ""
+echo ">>> Importando dashboards y visualizaciones desde data/dashboard.ndjson..."
+sleep 5
+RESPONSE=$(curl -s -X POST "$DASHBOARDS_URL/api/saved_objects/_import" \
+  -H "osd-xsrf: true" \
+  --form file=@data/dashboard.ndjson)
+
+if echo "$RESPONSE" | grep -q '"success":false'; then
+  echo "❌ Errores al importar dashboards"
+  echo "$RESPONSE" | python3 -m json.tool
+  exit 1
+else
+  echo "✅ Dashboards y visualizaciones importados exitosamente"
+fi
+
+sleep 5
 # ---------------------------------------------------------------------------
 # Resumen final
 # ---------------------------------------------------------------------------
@@ -277,3 +295,5 @@ else
   echo -e "\n${RED}⚠️  Algunas queries fallaron. Revisa los datos cargados y los índices.${RESET}\n"
   exit 1
 fi
+
+# ?overwrite=true
