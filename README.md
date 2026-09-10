@@ -16,9 +16,10 @@
 8. [Cargar datos (load)](#cargar-datos-load)
 9. [Verificar funcionamiento (verify)](#verificar-funcionamiento-verify)
 10. [Dashboards](#dashboards)
-11. [Limpieza total (clean)](#limpieza-total-clean)
-12. [Flujo Git y contribución](#flujo-git-y-contribución)
-13. [Roadmap AWS](#roadmap-aws)
+11. [RAG local (bot de documentación)](#rag-local-bot-de-documentación)
+12. [Limpieza total (clean)](#limpieza-total-clean)
+13. [Flujo Git y contribución](#flujo-git-y-contribución)
+14. [Roadmap AWS](#roadmap-aws)
 
 ---
 
@@ -104,6 +105,11 @@ cd hpg-opensearch
 
 ```
 MISI-N/
+├── .github/
+│   ├── scripts/
+│   │   └── flatten_docs.py       # Aplana README+docs/ para la Wiki
+│   └── workflows/
+│       └── sync-wiki.yml         # Publica docs en la Wiki en cada push
 ├── css/
 │   └── style.css
 ├── data/
@@ -116,8 +122,13 @@ MISI-N/
 │   └── sources.md                # Origen y proceso de datos (Fabio)
 ├── opensearch/
 │   ├── pets_catalog.json         # Mapping catálogo mascotas (Jhon)
-│   └── hotel_assets.json         # Mapping servicios hotel (Jhon)
+│   ├── hotel_assets.json         # Mapping servicios hotel (Jhon)
+│   └── rag_corpus.json           # Mapping índice k-NN del RAG local
 ├── scripts/
+│   ├── rag/
+│   │   ├── requirements.txt      # Dependencias Python del RAG local
+│   │   ├── chunk_and_embed.py    # Chunking + embeddings + indexación
+│   │   └── ask.py                # Retrieve + generate (CLI)
 │   ├── up.sh                     # Levantar stack
 │   ├── create_hotel_data.sh 
 │   ├── fix_hotel_data.sh
@@ -127,6 +138,8 @@ MISI-N/
 │   ├── init_indices.sh           # Crear índices (Jhon)
 │   ├── load_data.sh              # Cargar datasets (Jhon)
 │   ├── setup_dashboards.sh
+│   ├── rag_ingest.sh             # Indexar documentación para el RAG
+│   ├── rag_ask.sh                # Preguntar al bot de documentación
 │   └── verify_queries.sh         # Ejecutar queries (Fabio)                
 ├── .gitignore
 ├── index.html
@@ -210,6 +223,61 @@ curl http://localhost:9200/hotel_assets/_count
 > 📌 Responsable: **Fabio** — ver su módulo para guía completa.
 
 Accede en: **http://localhost:5601**
+
+---
+
+## RAG local (bot de documentación)
+
+Bot de preguntas/respuestas sobre la documentación de este mismo repositorio, corriendo
+**100% en local** (sin cuenta de nube ni API keys): usa el propio OpenSearch del stack como
+vector store (índice `rag_corpus` con k-NN) y un LLM local servido por [Ollama](https://ollama.com).
+
+### Prerequisitos adicionales
+
+| Herramienta | Verificar |
+|---|---|
+| Python 3.10+ | `python3 --version` |
+| Ollama | `ollama --version` |
+
+```bash
+pip install -r scripts/rag/requirements.txt
+
+# Descargar un modelo local una sola vez (ajustable con RAG_LLM_MODEL)
+ollama pull llama3.2
+```
+
+### Indexar la documentación
+
+```bash
+./scripts/rag_ingest.sh
+```
+
+Trocea (`chunking`) y genera embeddings locales (`sentence-transformers`) de `README.md`,
+`docs/`, `scripts/*.sh`, `opensearch/*.json`, `docker/docker-compose.yml` y los archivos del
+front-end, y los indexa en `rag_corpus`. Es un paso **manual**, a diferencia del resto del stack:
+un workflow de GitHub Actions no puede alcanzar el OpenSearch de tu máquina, así que reindexar
+después de cambiar la documentación queda a criterio de quien la edita — igual que `load_data.sh`.
+
+### Preguntar
+
+```bash
+./scripts/rag_ask.sh "¿Cómo se levanta el stack?"
+```
+
+El bot responde **solo** con lo que encuentra en la documentación indexada (nunca inventa) y lista
+las fuentes usadas. Variables de entorno opcionales: `OLLAMA_URL`, `RAG_LLM_MODEL`, `RAG_TOP_K`.
+
+### Sincronización a la Wiki
+
+En paralelo, cualquier push a `main` que toque `README.md` o `docs/**` dispara el workflow
+[`sync-wiki.yml`](.github/workflows/sync-wiki.yml), que publica esos mismos documentos en la Wiki
+del repositorio. **Requiere un bootstrap manual una única vez**: alguien con acceso debe crear la
+primera página de la Wiki desde la pestaña *Wiki* de GitHub antes de que el workflow pueda clonarla.
+
+### Fuera de alcance de esta primera versión
+
+Sin nube/AWS, sin memoria de conversación entre turnos (cada pregunta es independiente), sin
+disparo automático de la reindexación local, sin interfaz web (por ahora, solo CLI).
 
 ---
 

@@ -1,0 +1,23 @@
+{
+  "settings": {
+    "index.knn": true,
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "source_path": { "type": "keyword" },
+      "chunk_id":    { "type": "integer" },
+      "text":        { "type": "text" },
+      "embedding": {
+        "type": "knn_vector",
+        "dimension": 384,
+        "method": {
+          "name": "hnsw",
+          "space_type": "cosinesimil",
+          "engine": "nmslib"
+        }
+      }
+    }
+  }
+}
