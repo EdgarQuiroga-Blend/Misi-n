@@ -269,7 +269,7 @@ las fuentes usadas. Variables de entorno opcionales: `OLLAMA_URL`, `RAG_LLM_MODE
 
 ### Sincronización a la Wiki
 
-En paralelo, cualquier push a `main` que toque `README.md` o `docs/**` dispara el workflow
+En paralelo, cualquier push a `develop` que toque `README.md` o `docs/**` dispara el workflow
 [`sync-wiki.yml`](.github/workflows/sync-wiki.yml), que publica esos mismos documentos en la Wiki
 del repositorio. **Requiere un bootstrap manual una única vez**: alguien con acceso debe crear la
 primera página de la Wiki desde la pestaña *Wiki* de GitHub antes de que el workflow pueda clonarla.

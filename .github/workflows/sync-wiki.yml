@@ -2,7 +2,7 @@ name: Sync docs to Wiki
 
 on:
   push:
-    branches: [main]
+    branches: [develop] # rama de integración real de este repo (no existe "main" todavía)
     paths:
       - "README.md"
       - "docs/**"
