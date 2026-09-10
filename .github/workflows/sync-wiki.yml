@@ -24,10 +24,17 @@ jobs:
 
       - name: Clone wiki repo
         run: |
-          git clone "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git" wiki
-        # Nota: la Wiki debe inicializarse manualmente una vez (crear la
-        # primera página desde la UI de GitHub) antes de que este clone
-        # funcione — es un prerequisito de bootstrap, no del pipeline.
+          git clone "https://x-access-token:${{ secrets.WIKI_SYNC_TOKEN }}@github.com/${{ github.repository }}.wiki.git" wiki
+        # Notas:
+        # - La Wiki debe inicializarse manualmente una vez (crear la primera
+        #   página desde la UI de GitHub) antes de que este clone funcione —
+        #   es un prerequisito de bootstrap, no del pipeline.
+        # - GITHUB_TOKEN (el token automático del job) NO tiene permiso para
+        #   escribir en el repo de la Wiki, aunque sí lo tenga sobre el repo
+        #   principal — es una limitación conocida de GitHub Actions. Por eso
+        #   se usa WIKI_SYNC_TOKEN: un Personal Access Token creado a mano
+        #   (scope "repo") y guardado como secreto del repositorio, fuera del
+        #   grafo de este workflow — el workflow solo referencia su nombre.
 
       - name: Flatten docs into wiki
         run: |
