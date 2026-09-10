@@ -271,8 +271,17 @@ las fuentes usadas. Variables de entorno opcionales: `OLLAMA_URL`, `RAG_LLM_MODE
 
 En paralelo, cualquier push a `develop` que toque `README.md` o `docs/**` dispara el workflow
 [`sync-wiki.yml`](.github/workflows/sync-wiki.yml), que publica esos mismos documentos en la Wiki
-del repositorio. **Requiere un bootstrap manual una única vez**: alguien con acceso debe crear la
-primera página de la Wiki desde la pestaña *Wiki* de GitHub antes de que el workflow pueda clonarla.
+del repositorio.
+
+**Requiere dos pasos de bootstrap manual, una única vez:**
+
+1. Crear la primera página de la Wiki desde la pestaña *Wiki* de GitHub (título `Home`), antes de
+   que el workflow pueda clonarla.
+2. Crear un *Personal Access Token* (scope `repo`) desde **GitHub → Settings → Developer settings
+   → Personal access tokens**, y guardarlo como secreto del repositorio con el nombre
+   `WIKI_SYNC_TOKEN` (**Settings → Secrets and variables → Actions → New repository secret**). Es
+   necesario porque el `GITHUB_TOKEN` automático del job **no** tiene permiso de escritura sobre el
+   repo de la Wiki — una limitación conocida de GitHub Actions, no un error de configuración.
 
 ### Fuera de alcance de esta primera versión
 
