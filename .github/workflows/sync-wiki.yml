@@ -1,0 +1,48 @@
+name: Sync docs to Wiki
+
+on:
+  push:
+    branches: [develop] # rama de integración real de este repo (no existe "main" todavía)
+    paths:
+      - "README.md"
+      - "docs/**"
+  workflow_dispatch: # escape manual: re-sincronizar sin un commit nuevo
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Clone wiki repo
+        run: |
+          git clone "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git" wiki
+        # Nota: la Wiki debe inicializarse manualmente una vez (crear la
+        # primera página desde la UI de GitHub) antes de que este clone
+        # funcione — es un prerequisito de bootstrap, no del pipeline.
+
+      - name: Flatten docs into wiki
+        run: |
+          find wiki -maxdepth 1 -mindepth 1 ! -name ".git" -exec rm -rf {} +
+          python3 .github/scripts/flatten_docs.py --repo-root . --out-dir wiki
+
+      - name: Commit and push if changed
+        working-directory: wiki
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Sin cambios en la Wiki, nada que publicar."
+          else
+            git commit -m "docs: sync wiki from ${{ github.sha }}"
+            git push
+          fi
